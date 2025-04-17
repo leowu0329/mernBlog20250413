@@ -3,7 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 
 const Navbar = () => {
-  const [searchBoxVisibility, serSearchBoxVisibility] = useState(false);
+  const [searchBoxVisibility, setSearchBoxVisibility] = useState(false);
   return (
     <>
       <nav className="navbar">
@@ -27,13 +27,13 @@ const Navbar = () => {
           <button
             className="md:hidden bg-grey w-12 h-12 rounded-full flex items-center justify-center"
             onClick={() =>
-              serSearchBoxVisibility((currentValue) => !currentValue)
+              setSearchBoxVisibility((currentValue) => !currentValue)
             }
           >
             <i className="fi fi-rr-search text-xl"></i>
           </button>
           <Link to="/editor" className="hidden md:flex grp-2 link">
-            <i className="fi fi-rr file-edit"></i>
+            <i className="fi fi-rr-file-edit"></i>
             <p>Write</p>
           </Link>
           <Link to="/signin" className="btn-dark py-2">
